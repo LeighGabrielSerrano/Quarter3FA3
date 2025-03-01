@@ -10,6 +10,7 @@
 		text-align: center; 
 		margin-top: 50px; 
 		background-image: url("bg.gif");
+
 		}
 		.container{
 		    display: flex;
@@ -81,8 +82,17 @@
 		padding: 5	px;
 		margin-left:200px;
 		margin-right:200px;
+		font-size: 25px;
+
 		}
+		.large{
+		font-size: 25px;
+		background-color: white;
+		padding: 5	px;
+		margin-left:200px;
+		margin-right:200px;
 		
+		}
 
     </style>
 </head>
@@ -112,7 +122,9 @@
             <div class="number" id="num3Display"></div>
         </div>
     </div>
+	
 	    <p class="close" id="close"></p>
+		<p class="large" id="largest"></p>
 		<p class="nth" id="nth"></p>
 		<p class="time" id="timeBreakdown"></p>
 
@@ -136,8 +148,10 @@
         let totalMinutes = num2 * num3;
         let hours = Math.floor(totalMinutes / 60);
         let minutes = totalMinutes % 60;
-		
+		let largest = Math.max(num1, num2, num3);
+
         document.getElementById("close").innerText = "Number closest to 9 is: "+close;
+		document.getElementById("largest").innerText = "Largest Number: "+largest;
         document.getElementById("nth").innerText = "The "+close+ "th letter in the alphabet is: "+nth;
 		document.getElementById("timeBreakdown").innerText = "The time it took was  ("+totalMinutes+") minutes: "+hours+" hours and "+minutes+" minutes";
 
